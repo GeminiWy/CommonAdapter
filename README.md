@@ -2,7 +2,7 @@
 通用的RecyclerView的适配器
 ## 使用方式
 ### 1.1 创建自己的Adapter继承自CommonAdapter
-### 1.2创建自己的ViewHolder继承自CommonAdapter.CommonViewHolder
+### 1.2 创建自己的ViewHolder继承自CommonAdapter.CommonViewHolder
 ### 2.1 定义好CommonAdapter.CommonViewHolder的泛型（列表数据的类型）,例：
 ```
 public class TestCommonViewHolder extends CommonAdapter.CommonViewHolder<String>{
