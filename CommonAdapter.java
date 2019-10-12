@@ -18,9 +18,9 @@ public abstract class CommonAdapter<T,VH extends CommonAdapter.CommonViewHolder<
     public CommonAdapter(Context context){
         this(context,null);
     }
-    public CommonAdapter(Context context, List<T> testDatas) {
+    public CommonAdapter(Context context, List<T> datas) {
         this.mContext = context.getApplicationContext();
-        this.mDatas = testDatas;
+        this.mDatas = datas;
     }
 
 
@@ -49,7 +49,17 @@ public abstract class CommonAdapter<T,VH extends CommonAdapter.CommonViewHolder<
     }
 
 
+    /**
+     * 返回layout的resId
+     * @return
+     */
     public abstract int getLayout();
+
+    /**
+     * 返回继承自{@link CommonViewHolder}的自定义ViewHolder
+     * @param itemView
+     * @return
+     */
     public abstract VH getViewHolder(View itemView);
 
     @Override
@@ -102,8 +112,21 @@ public abstract class CommonAdapter<T,VH extends CommonAdapter.CommonViewHolder<
         }
 
 
+       /**
+        * 每个item的点击事件
+        * @param v itemView
+        * @param eachItemData 列表数据集合的position位置的数据
+        * @param position 点击的position
+        */
        public abstract void onItemClick(View v,T eachItemData,int position);
+
+       /**
+        * 绑定视图数据
+        * @param eachItemData 列表数据集合的position位置的数据
+        * @param position 绑定的是哪个位置的viewHolder
+        */
        public abstract void bindItemData(T eachItemData,int position);
+
        /**
         * 在这里做findViewById操作
         * @param itemView
