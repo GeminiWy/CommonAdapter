@@ -49,7 +49,7 @@ public class DemoTestCommonAdapter extends CommonAdapter<String,DemoTestCommonAd
 
 ## 例子：
 ```
-// **自己的Adapter，列表数据的类型为String**
+// 自己的Adapter，列表数据的类型为String
 public class DemoTestCommonAdapter extends CommonAdapter<String,DemoTestCommonAdapter.TestCommonViewHolder> {
 
 
@@ -71,7 +71,7 @@ public class DemoTestCommonAdapter extends CommonAdapter<String,DemoTestCommonAd
         return new TestCommonViewHolder(itemView);
     }
 
-// **自己的ViewHolder**
+    // 自己的ViewHolder
     public class TestCommonViewHolder extends CommonAdapter.CommonViewHolder<String>{
         private TextView mTextView;
 
