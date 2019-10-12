@@ -1,12 +1,43 @@
 # CommonAdapter
-通用的RecyclerView的适配器
+通用的RecyclerView的适配器，只要实现几个暴露出来的方法就可轻松实现列表布局。
 ## 使用方式
 ### 1.1 创建自己的Adapter继承自CommonAdapter
 ### 1.2 创建自己的ViewHolder继承自CommonAdapter.CommonViewHolder
-### 2.1 定义好CommonAdapter.CommonViewHolder的泛型（列表数据的类型）,例：
+### 2.1 定义好CommonAdapter.CommonViewHolder的泛型（列表数据的类型）,实现几个必须实现的方法，例：
 ```
 public class TestCommonViewHolder extends CommonAdapter.CommonViewHolder<String>{
-……
+        public TestCommonViewHolder(@NonNull View itemView) {
+            super(itemView);
+        }
+
+        /**
+        * 每个item的点击事件
+        * @param itemView
+        * @param eachItemData 列表数据集合的position位置的数据
+        * @param position 点击的position
+        */
+        @Override
+        public void onItemClick(View v, String eachItemData, int position) {
+            
+        }
+
+        /**
+        * 绑定视图数据
+        * @param eachItemData 列表数据集合的position位置的数据
+        * @param position 绑定的是哪个位置的viewHolder
+        */
+        @Override
+        public void bindItemData(String eachItemData, int position) {
+        }
+
+        /**
+        * 在这里做findViewById操作
+        * @param itemView 
+        */
+        @Override
+        public void findView(View itemView) {
+            mTextView = itemView.findViewById(R.id.tv_item);
+        }
 }
 ```
 ### 2.2 定义好CommonAdapter的泛型（参数一：列表数据的类型；参数二：自己的ViewHolder）,例：
