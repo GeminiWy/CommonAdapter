@@ -12,7 +12,7 @@ public class TestCommonViewHolder extends CommonAdapter.CommonViewHolder<String>
 
         /**
         * 每个item的点击事件
-        * @param itemView
+        * @param v itemView
         * @param eachItemData 列表数据集合的position位置的数据
         * @param position 点击的position
         */
@@ -40,10 +40,33 @@ public class TestCommonViewHolder extends CommonAdapter.CommonViewHolder<String>
         }
 }
 ```
-### 2.2 定义好CommonAdapter的泛型（参数一：列表数据的类型；参数二：自己的ViewHolder）,例：
+### 2.2 定义好CommonAdapter的泛型（参数一：列表数据的类型；参数二：自己的ViewHolder）,实现必须实现的几个方法，例：
 ```
 public class DemoTestCommonAdapter extends CommonAdapter<String,DemoTestCommonAdapter.TestCommonViewHolder>{
-……
+public DemoTestCommonAdapter(Context context) {
+        super(context);
+    }
+
+    public DemoTestCommonAdapter(Context context, List<String> datas) {
+        super(context, datas);
+    }
+
+    /**
+     * 返回layout的resId，例：R.layout.test
+     * @return
+     */
+    @Override
+    public int getLayout() {
+    }
+
+     /**
+     * 返回继承自{@link CommonViewHolder}的自定义ViewHolder
+     * @param itemView
+     * @return
+     */
+    @Override
+    public TestCommonViewHolder getViewHolder(View itemView) {
+    }
 }
 ```
 
